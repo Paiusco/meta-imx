@@ -6,11 +6,11 @@ SECTION = "base"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=4ef68f113b9400b1140be9b69208a816"
 
-SRCBRANCH = "lf-6.1.22_2.0.0"
+SRCBRANCH = "lf-6.1.36_2.1.0"
 CRYPTO_AF_ALG_SRC ?= "git://github.com/nxp-imx/crypto_af_alg.git;protocol=https"
 SRC_URI = "${CRYPTO_AF_ALG_SRC};branch=${SRCBRANCH}"
 
-SRCREV = "cf7ba1039d4c6e221dbc21855740495e11ff49fd"
+SRCREV = "0be7a9fe7f0e8333f5469b19da94c2fca2998ffc"
 
 S = "${WORKDIR}/git"
 

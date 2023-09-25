@@ -10,8 +10,8 @@ DEPENDS = " openssl"
 
 SRC_URI = "${SECURE_ENCLAVE_LIB_SRC};branch=${SRCBRANCH}"
 SECURE_ENCLAVE_LIB_SRC ?= "git://github.com/NXP/imx-secure-enclave.git;protocol=https"
-SRCBRANCH = "lf-6.1.22_2.0.0"
-SRCREV = "cb9aa4c745c373cfb45d6afa01cb59e99f885397"
+SRCBRANCH = "lf-6.1.36_2.1.0"
+SRCREV = "9179ef03560d9639ec35948ac4169d5e4364dc4c"
 
 S = "${WORKDIR}/git"
 
@@ -20,9 +20,9 @@ EXTRA_OEMAKE = "PLAT=ele OPENSSL_PATH=${STAGING_INCDIR}"
 TARGET_CC_ARCH += "${LDFLAGS}"
 
 do_install () {
-	oe_runmake DESTDIR=${D} install_tests
+	oe_runmake -C ${S} DESTDIR=${D} install_tests
 }
 
 FILES:${PN} += "${datadir}/se"
 
-COMPATIBLE_MACHINE = "(mx8ulp-nxp-bsp|mx93-nxp-bsp)"
+COMPATIBLE_MACHINE = "(mx8-nxp-bsp|mx9-nxp-bsp)"

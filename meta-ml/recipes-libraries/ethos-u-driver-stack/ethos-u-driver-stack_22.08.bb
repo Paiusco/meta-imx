@@ -4,14 +4,14 @@ an example of how a rich operating system like Linux can dispatch \
 inferences to an Arm Cortex(R)-M subsystem, consisting of an Arm \
 Cortex-M of choice and an Arm Ethos-U NPU."
 LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE-APACHE-2.0.txt;md5=e3fc50a88d0a364313df4b21ef20c29e"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=e3fc50a88d0a364313df4b21ef20c29e"
 
 DEPENDS = "flatbuffers python3-pybind11 python3-pybind11-native"
 
 SRC_URI = "${ETHOS_U_SRC};branch=${SRCBRANCH}"
 ETHOS_U_SRC ?= "git://github.com/nxp-imx/ethos-u-driver-stack-imx.git;protocol=https"
-SRCBRANCH = "lf-6.1.22_2.0.0"
-SRCREV = "707bbc99b5353a7ef3d7b13ecc7f916329775db7"
+SRCBRANCH = "lf-6.1.36_2.1.0"
+SRCREV = "98759f579297726474d6b32927694502c66ce15a"
 
 S = "${WORKDIR}/git"
 

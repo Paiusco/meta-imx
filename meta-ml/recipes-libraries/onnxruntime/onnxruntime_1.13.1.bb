@@ -11,10 +11,10 @@ DEPENDS = "libpng zlib ${BPN}-native"
 inherit setuptools3
 
 ONNXRUNTIME_SRC ?= "gitsm://github.com/nxp-imx/onnxruntime-imx.git;protocol=https"
-SRCBRANCH_runtime = "lf-6.1.22_2.0.0"
+SRCBRANCH_runtime = "lf-6.1.36_2.1.0"
 SRC_URI = "${ONNXRUNTIME_SRC};branch=${SRCBRANCH_runtime};name=runtime"
 
-SRCREV_runtime = "6cde05cc61834eff462570f6e96bee37e67ee85e"
+SRCREV_runtime = "0f642b5e71e6e9c9681b90b2844176ab7eacf6eb"
 SRCREV_FORMAT = "runtime_model"
 
 S = "${WORKDIR}/git"

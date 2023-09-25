@@ -8,8 +8,8 @@ DEPENDS:append:mx9-nxp-bsp = " imx-lib"
 SRC_URI = "${IMXTEST_SRC};branch=${SRCBRANCH} \
            file://memtool_profile"
 IMXTEST_SRC ?= "git://github.com/nxp-imx/imx-test.git;protocol=https"
-SRCBRANCH = "lf-6.1.22_2.0.0"
-SRCREV = "9fe083c29439b71292df9a8e4d40c73f25828a69" 
+SRCBRANCH = "lf-6.1.36_2.1.0"
+SRCREV = "bfbdf7dcf9d617a1eb054464ebdf93d943d34cc1" 
 
 PLATFORM:mx8ulp-nxp-bsp = "IMX8ULP"
 PLATFORM:mx9-nxp-bsp = "IMX8ULP"

@@ -23,7 +23,7 @@ PSA_LIB_SRC ?= "git://github.com/ARM-software/psa-arch-tests.git;protocol=https"
 PSA_ARCH_TESTS_SRC_PATH = "psa-arch-tests"
 SRCBRANCH_smw = "release/version_2.x"
 SRCBRANCH_psa = "main"
-SRCREV_smw = "f0570b3e8cb5f68d54edc4f9dd7cb984f6f604ed"
+SRCREV_smw = "88a76b97f1e500895cfe78fc0ade760607fa8761"
 SRCREV_psa = "463cb95ada820bc6f758d50066cf8c0ed5cc3a02"
 SRCREV_FORMAT = "smw_psa"
 S = "${WORKDIR}/git/smw"
@@ -51,8 +51,6 @@ EXTRA_OECMAKE_IMX:mx93-nxp-bsp = "-DELE_ROOT=${STAGING_DIR_HOST}"
 
 OECMAKE_TARGET_COMPILE += "build_tests"
 OECMAKE_TARGET_INSTALL += "install_tests"
-
-INSANE_SKIP_${PN}-tests = "textrel"
 
 PACKAGES =+ "${PN}-tests"
 

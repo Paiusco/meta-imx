@@ -11,7 +11,6 @@ inherit packagegroup
 
 ML_NNSTREAMER_PKGS_LIST = " \
     nnstreamer \
-    nnstreamer-deepview-rt \
     nnstreamer-protobuf \
     nnstreamer-python3 \
     nnstreamer-query \
@@ -33,14 +32,12 @@ ML_GST_PROFILER:mx9-nxp-bsp   = "gst-shark"
 ML_PKGS            = ""
 ML_PKGS:mx8-nxp-bsp = " \
     onnxruntime-tests \
-    deepview-rt-examples \
     modelrunner \
     tensorflow-lite \
     torchvision \
 "
 ML_PKGS:mx9-nxp-bsp = " \
     onnxruntime-tests \
-    deepview-rt-examples \
     modelrunner \
     tensorflow-lite \
     torchvision \

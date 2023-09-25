@@ -6,7 +6,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/optee-os:"
 
 SRC_URI:remove = "git://github.com/OP-TEE/optee_os.git;branch=master;protocol=https"
 SRC_URI:prepend = "${OPTEE_OS_SRC};branch=${SRCBRANCH} "
-SRC_URI:append = "file://0007-allow-setting-sysroot-for-clang.patch"
+SRC_URI:append = " file://0007-allow-setting-sysroot-for-clang.patch"
 SRC_URI:remove = "file://0001-allow-setting-sysroot-for-libgcc-lookup.patch \
                   file://0002-optee-enable-clang-support.patch \
                   file://0003-core-link-add-no-warn-rwx-segments.patch"
@@ -33,6 +33,7 @@ OPTEEMACHINE:mx8dx-nxp-bsp     = "imx-mx8dxmek"
 OPTEEMACHINE:mx8dxl-nxp-bsp    = "imx-mx8dxlevk"
 OPTEEMACHINE:mx8mnul-nxp-bsp   = "imx-mx8mnevk"
 OPTEEMACHINE:mx8ulp-nxp-bsp    = "imx-mx8ulpevk"
+OPTEEMACHINE:mx91p-nxp-bsp     = "imx-mx93evk"
 OPTEEMACHINE:mx93-nxp-bsp      = "imx-mx93evk"
 
 # Strip the leading imx-
@@ -41,6 +42,13 @@ PLATFORM_FLAVOR = "${@d.getVar('OPTEEMACHINE')[4:]}"
 EXTRA_OEMAKE:append = " \
     CFG_TEE_TA_LOG_LEVEL=0 \
     CFG_TEE_CORE_LOG_LEVEL=0 \
+"
+
+EXTRA_OEMAKE:append:imx8mq-lpddr4-wevk = " \
+    CFG_CORE_LARGE_PHYS_ADDR=y \
+    CFG_CORE_ARM64_PA_BITS=36 \
+    CFG_DDR_SIZE=0x100000000 \
+    CFG_TZDRAM_START=0xfe000000 \
 "
 
 COMPATIBLE_MACHINE = "(imx-nxp-bsp)"
